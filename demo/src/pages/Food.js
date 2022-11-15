@@ -5,9 +5,6 @@ import "./food.css";
 import r from "./test/item-1.jpeg";
 
 export default function Food() {
-  if (condition) {
-  } else {
-  }
   return (
     <>
       <section className="menu">

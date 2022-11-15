@@ -6,7 +6,6 @@ import { useState } from "react";
 export default function Cardscrol() {
   const [Index, setIndex] = useState(0);
   const next = () => {
-    debugger;
     Index >= reviews.length - 1 ? setIndex(0) : setIndex(Index + 1);
   };
   const pre = () => {

@@ -11,11 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-#root {
+/* #root {
   display: flex;
   justify-content: center;
   text-align: center;
-}
+} */
 .ravi {
   border: 5px solid rgba(195, 0, 0, 0.627);
   border-radius: 33px;
@@ -26,4 +26,14 @@ code {
 .ravi:hover {
   transform: scale(1.03);
   box-shadow: rgba(196, 46, 46, 0.35) 0px 9px 20px;
+}
+table {
+  margin-top: 20px;
+}
+th,
+td {
+  padding: 5px;
+}
+tr:nth-child(even) {
+  background-color: #d6eeee;
 }
