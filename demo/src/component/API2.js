@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 const API2 = () => {
   const [data, setdata] = useState([]);
+  const [findd, setfindd] = useState("");
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((e) => e.json())
@@ -12,7 +13,7 @@ const API2 = () => {
   }, []);
   //   ======================================
   const myfun = (h) => {
-    setdata(h.target.value);
+    setfindd(h.target.value);
   };
 
   return (
@@ -21,7 +22,7 @@ const API2 = () => {
         className="w-50 p-2 rounded-2 mt-4"
         type="text"
         onChange={myfun}
-        value={data}
+        value={findd}
       />
 
       {/* ========================================================== */}
@@ -33,13 +34,14 @@ const API2 = () => {
             <th>username</th>
             <th>email</th>
             <th>phone</th>
+            <th>website</th>
           </tr>
         </thead>
         <tbody>
           {/* ------------------------------------------------------------------------------- */}
           {data
             .filter((v) => {
-              return v.id >= 0;
+              return v.name.toUpperCase().indexOf(findd.toUpperCase()) >= 0;
             })
             .map((v) => {
               return (
@@ -49,6 +51,7 @@ const API2 = () => {
                   <td>{v.username}</td>
                   <td>{v.email}</td>
                   <td>{v.phone}</td>
+                  <td>{v.website}</td>
                 </tr>
               );
             })}

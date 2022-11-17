@@ -6,11 +6,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background: linear-gradient(
-    0deg,
-    rgba(34, 193, 195, 1) 0%,
-    rgba(253, 187, 45, 1) 100%
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(190, 100, 100, 1) 50%,
+    rgba(69, 181, 252, 1) 100%
   ); */
-  background-color: red;
+
+  background-image: url("https://thumbs.gfycat.com/PessimisticDistinctGrub.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 code {
