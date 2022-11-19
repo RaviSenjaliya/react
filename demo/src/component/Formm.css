@@ -35,3 +35,17 @@ textarea {
   color: white;
   font-size: 20px;
 }
+
+span {
+  color: rgb(254, 233, 233);
+  text-shadow: -1px -1px 10px rgb(255, 0, 0);
+}
+.output {
+  margin-top: 30px;
+  padding: 5px;
+
+  color: black;
+  background-color: white;
+  justify-content: center;
+  display: block;
+}
