@@ -23,6 +23,7 @@ export default function Form2() {
     Company: "",
     Message: "",
   });
+  const [stor, setstor] = useState([]);
 
   // useEffect(() => {
   //   localStorage.setItem("form", JSON.stringify(Data));
@@ -70,7 +71,9 @@ export default function Form2() {
 
   const myfun = (e) => {
     e.preventDefault();
-    localStorage.setItem("form", JSON.stringify(Data));
+
+    setstor((e) => [...e, Data]);
+    localStorage.setItem("form", JSON.stringify(stor));
 
     console.log(Data);
   };

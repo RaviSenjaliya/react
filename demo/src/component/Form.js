@@ -12,17 +12,18 @@ const Formm = () => {
   const fn = (e) => {
     setuser({ ...user, fname: e.target.value });
   };
+
   const ln = (e) => {
-    setuser({ ...user, fname: e.target.value });
+    setuser({ ...user, lname: e.target.value });
   };
   const mn = (e) => {
-    setuser({ ...user, fname: e.target.value });
+    setuser({ ...user, mname: e.target.value });
   };
   const pho = (e) => {
-    setuser({ ...user, fname: e.target.value });
+    setuser({ ...user, phone: e.target.value });
   };
   const add = (e) => {
-    setuser({ ...user, fname: e.target.value });
+    setuser({ ...user, address: e.target.value });
   };
   const myfun = (e) => {
     e.preventDefault();

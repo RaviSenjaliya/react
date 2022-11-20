@@ -15,11 +15,13 @@ import API2 from "./component/API2";
 import Axioss from "./component/axioss";
 import Formm from "./component/Form";
 import Form2 from "./component/Formm";
+import Exam from "./component/Exam";
+import Exam2 from "./component/Exam2";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
+    <App />
     {/* <Counter /> */}
     {/* <Txchange /> */}
     {/* <Mydata /> */}
@@ -27,9 +29,13 @@ root.render(
     {/* <Axioss /> */}
     {/* <Mydata /> */}
     {/* <Formm /> */}
-    <Form2 />
+    {/* <Form2 /> */}
+    {/* <Mydata /> */}
     {/* <Cardscrol /> */}
     {/* <API /> */}
+    {/* <Exam2 /> */}
+
+    {/* <Exam /> */}
   </React.StrictMode>
 );
 
