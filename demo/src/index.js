@@ -17,11 +17,14 @@ import Formm from "./component/Form";
 import Form2 from "./component/Formm";
 import Exam from "./component/Exam";
 import Exam2 from "./component/Exam2";
+import Select from "./component/Form/select";
+import Selectt from "./component/Form/select";
+import Ftask from "./component/Form/select2";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
     {/* <Counter /> */}
     {/* <Txchange /> */}
     {/* <Mydata /> */}
@@ -34,7 +37,8 @@ root.render(
     {/* <Cardscrol /> */}
     {/* <API /> */}
     {/* <Exam2 /> */}
-
+    {/* <Selectt /> */}
+    <Ftask />
     {/* <Exam /> */}
   </React.StrictMode>
 );
