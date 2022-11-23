@@ -1,8 +1,7 @@
 import React from "react";
-// import "./select2.css";
 import { useState } from "react";
 import Select from "react-select";
-// import "./select2.css";
+import "./select2.css";
 
 export default function Ftask() {
   const [data, setdata] = useState({
@@ -13,6 +12,7 @@ export default function Ftask() {
     Edate: "",
     check: "",
   });
+  const [valid, setvalid] = useState(false);
 
   const title = [
     { value: "Mr", label: "Mr" },
@@ -35,9 +35,10 @@ export default function Ftask() {
   const handler = (e) => {
     if (e.target.type == "checkbox") {
       if (e.target.checked == true) {
-        setdata({ ...data, [e.target.name]: "Firstname" });
+        setvalid(true);
+        setdata({ ...data, Edate: "" });
       } else {
-        setdata({ ...data, [e.target.name]: e.target.value });
+        setvalid(false);
       }
     } else {
       setdata({ ...data, [e.target.name]: e.target.value });
@@ -139,7 +140,9 @@ export default function Ftask() {
                 type="date"
                 className="form-control"
                 name="Edate"
+                disabled={valid}
                 onChange={handler}
+                value={data.Edate}
               />
             </div>
           </div>
@@ -149,6 +152,7 @@ export default function Ftask() {
             className="form-check-input me-2"
             type="checkbox"
             name="check"
+            onClick={handler}
           />
           <label className="form-check-label" for="form2Example33">
             Subscribe to our newsletter

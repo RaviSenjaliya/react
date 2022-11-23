@@ -20,6 +20,7 @@ import Exam2 from "./component/Exam2";
 import Select from "./component/Form/select";
 import Selectt from "./component/Form/select";
 import Ftask from "./component/Form/select2";
+import FFormik from "./component/Form/Formik";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -38,7 +39,8 @@ root.render(
     {/* <API /> */}
     {/* <Exam2 /> */}
     {/* <Selectt /> */}
-    <Ftask />
+    {/* <Ftask /> */}
+    <FFormik />
     {/* <Exam /> */}
   </React.StrictMode>
 );
