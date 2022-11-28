@@ -10,10 +10,10 @@ export default function Selectt() {
     collage: "",
   });
   const degree = [
-    { value: "B.com", label: "B.com" },
-    { value: "BCA", label: "BCA" },
-    { value: "MCA", label: "MCA" },
-    { value: "MBA", label: "MBA" },
+    { value: "b.com", label: "b.com" },
+    { value: "b.ca", label: "b.ca" },
+    { value: "b.ajj", label: "b.ajj" },
+    { value: "b.tt", label: "b.tt" },
   ];
   const collage = [
     { value: "MSU", label: "MSU" },
@@ -48,6 +48,7 @@ export default function Selectt() {
           }}
           options={degree}
         />
+
         <br />
         {/* ============================================================== */}
 
