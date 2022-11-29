@@ -34,7 +34,7 @@ const TaskformD = (props) => {
               <button
                 className="btn btn-outline-success px-4 m-1  "
                 onClick={() => {
-                  props.delet(index);
+                  props.add(index);
                 }}
               >
                 🧾

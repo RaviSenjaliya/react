@@ -25,16 +25,19 @@ const Taskform = () => {
     mydata.splice(index, 1);
     setData(mydata);
   };
-  const addd = (index) => {
+  const add = () => {
     let mydata = [...Data];
-    mydata.splice(index, 1);
+    mydata.map((val, index) => {
+      return val;
+    });
     setData(mydata);
   };
-  // ------------------------------------------------------------
+
+  // --------------------------------------------------------------
   const handler = (e) => {
     setinput({ ...input, [e.target.name]: e.target.value });
   };
-  //   -------------------------------------------------------------
+  //   --------------------------------------------------------------
   const submitt = (e) => {
     e.preventDefault();
     let mydata = [...Data];
@@ -95,7 +98,7 @@ const Taskform = () => {
         />
       </form>
       <div className="my-5" id="in">
-        <TaskformD alldata={Data} delet={remove} add={addd} />
+        <TaskformD alldata={Data} delet={remove} add={add} />
       </div>
     </div>
   );
