@@ -2,10 +2,11 @@ import React from "react";
 import { useState } from "react";
 import TaskformD from "./TaskformD";
 import "./taskform.css";
-import Select from "react-select";
 
 const Taskform = () => {
+  const [search, setsearch] = useState("");
   const [Data, setData] = useState([]);
+  const [Add, setAdd] = useState(-1);
   const [input, setinput] = useState({
     Fname: "",
     Lname: "",
@@ -13,23 +14,10 @@ const Taskform = () => {
     Email: "",
     State: "",
   });
-  const State = [
-    { value: "Gujarat", label: "Gujarat" },
-    { value: "Assam", label: "Assam" },
-    { value: "Bihar", label: "Ms" },
-    { value: "Goa", label: "Goa" },
-    { value: "Kerala", label: "Kerala" },
-  ];
+
   const remove = (index) => {
     let mydata = [...Data];
     mydata.splice(index, 1);
-    setData(mydata);
-  };
-  const add = () => {
-    let mydata = [...Data];
-    mydata.map((val, index) => {
-      return val;
-    });
     setData(mydata);
   };
 
@@ -37,12 +25,32 @@ const Taskform = () => {
   const handler = (e) => {
     setinput({ ...input, [e.target.name]: e.target.value });
   };
+  const Shandler = (e) => {
+    setsearch(e.target.value);
+  };
+  // ---------------------------------------------------------------
+  const add = (index) => {
+    let add = Data[index];
+    setinput(add);
+    setAdd(index);
+  };
   //   --------------------------------------------------------------
   const submitt = (e) => {
     e.preventDefault();
-    let mydata = [...Data];
-    mydata.push(input);
-    setData(mydata);
+
+    if (Add >= 0) {
+      let b = [...Data];
+      b[Add].Fname = input.Fname;
+      b[Add].Lname = input.Lname;
+      b[Add].Phone = input.Phone;
+      b[Add].Email = input.Email;
+      b[Add].State = input.State;
+      setData(b);
+    } else {
+      let mydata = [...Data];
+      mydata.push(input);
+      setData(mydata);
+    }
   };
 
   //   ---------------------------------------------------------------
@@ -54,6 +62,7 @@ const Taskform = () => {
           name="Fname"
           onChange={handler}
           placeholder="First Name"
+          value={input.Fname}
           className=" form-control"
         />
         <br />
@@ -62,6 +71,7 @@ const Taskform = () => {
           name="Lname"
           onChange={handler}
           placeholder="Last Name"
+          value={input.Lname}
           className=" form-control"
         />
         <br />
@@ -70,6 +80,7 @@ const Taskform = () => {
           name="Phone"
           onChange={handler}
           placeholder="Phone No"
+          value={input.Phone}
           className=" form-control"
         />
         <br />
@@ -78,17 +89,19 @@ const Taskform = () => {
           name="Email"
           onChange={handler}
           placeholder="Email"
+          value={input.Email}
           className=" form-control"
         />
         <br />
-        <Select
+        <input
+          type="text"
           name="State"
-          onChange={(e) => {
-            handler({ target: { name: "State", value: e.value } });
-          }}
-          options={State}
+          onChange={handler}
           placeholder="State"
+          value={input.State}
+          className=" form-control"
         />
+        <br />
 
         <br />
         <input
@@ -97,8 +110,17 @@ const Taskform = () => {
           className="btn btn-danger form-control"
         />
       </form>
-      <div className="my-5" id="in">
-        <TaskformD alldata={Data} delet={remove} add={add} />
+      <div className="my-3" id="iin">
+        <input
+          type="text"
+          placeholder="serch...."
+          className=" form-control"
+          onChange={Shandler}
+          value={search}
+        />
+      </div>
+      <div className="my-3" id="in">
+        <TaskformD alldata={Data} delet={remove} Madd={add} search={search} />
       </div>
     </div>
   );
