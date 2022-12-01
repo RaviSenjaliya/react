@@ -51,6 +51,7 @@ const Taskform = () => {
       mydata.push(input);
       setData(mydata);
     }
+    setAdd(-1);
   };
 
   //   ---------------------------------------------------------------
