@@ -10,7 +10,7 @@ const T2 = () => {
   const [col, setcol] = useState([
     { field: "albumId", filter: "agNumberColumnFilter" },
     { field: "title", filter: true, sortable: true },
-    { cellRenderer: RainPerTenMmRenderer, width: 180 },
+    // { cellRenderer: RainPerTenMmRenderer, width: 180 },
   ]);
 
   useEffect(() => {
@@ -26,13 +26,13 @@ const T2 = () => {
   );
 };
 
-class RainPerTenMmRenderer {
-  init(params) {
-    const rainPerTenMm = params.value / 10;
-    this.eGui = createImageSpan(rainPerTenMm, params.url);
-  }
-  getGui() {
-    return this.eGui;
-  }
-}
+// class RainPerTenMmRenderer {
+//   init(params) {
+//     const rainPerTenMm = params.value / 10;
+//     this.eGui = createImageSpan(rainPerTenMm, params.url);
+//   }
+//   getGui() {
+//     return this.eGui;
+//   }
+// }
 export default T2;
