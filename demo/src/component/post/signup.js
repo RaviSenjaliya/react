@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 
-const Postt = () => {
+const Signup = () => {
   const [data, setdata] = useState({
     title: "",
     firstName: "",
@@ -45,4 +45,4 @@ const Postt = () => {
   );
 };
 
-export default Postt;
+export default Signup;
