@@ -10,13 +10,13 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import E312 from "./component/Exam/E3-12";
 import Imagee from "./component/Exam/Imagee";
+import Fooor from "./component/post/fooor";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ToastContainer />
-    {/* <E312 /> */}
-    <Imagee />
+    <Fooor />
   </React.StrictMode>
 );
 
