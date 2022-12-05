@@ -30,14 +30,19 @@ export default function Fooor() {
       bs: "",
     },
   });
-  const del = (index) => {
-    let val = [...data];
-    val.splice(1, index);
-    setdata(val);
-  };
+  // ----------------------------------------------------
   const Handler = (e) => {
     setinput({ ...input, [e.target.name]: e.target.value });
   };
+  // ----------------------------------------------------
+
+  const del = (index) => {
+    let val = [...data];
+    val.splice(index, 1);
+    setdata(val);
+  };
+  // ----------------------------------------------------
+
   const sub = (e) => {
     e.preventDefault();
     let val = [...data];
@@ -55,6 +60,9 @@ export default function Fooor() {
   return (
     <div>
       <div className="midd top mt-5 p-4">
+        <h1 className="text-center  bg-danger text-white p-2 rounded-2">
+          User Form
+        </h1>
         <form onSubmit={sub}>
           <h5 className="my-4 text-center bg-light p-2">User Details</h5>
           <label className="form-label">Name</label> <br />
@@ -151,7 +159,7 @@ export default function Fooor() {
           <h5 className="my-4 text-center bg-light p-2">Company Details</h5>
           <div className="row">
             <div className="col-sm">
-              <label className="form-label">Company name</label> <br />
+              <label className="form-label">Comp name</label> <br />
               <input
                 type="text"
                 id="input"
