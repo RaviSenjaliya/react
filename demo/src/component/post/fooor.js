@@ -54,7 +54,7 @@ export default function Fooor() {
       .then((e) => {
         console.log(e);
         setinput(e);
-        toast("done...");
+        toast("done...😄");
       });
   };
   return (
