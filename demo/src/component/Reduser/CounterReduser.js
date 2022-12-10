@@ -11,3 +11,5 @@ export default (state = 0, { type, payload }) => {
       return state;
   }
 };
+
+// how to do (kevi rite karshu functionality lakhvani)
