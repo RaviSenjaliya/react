@@ -4,6 +4,23 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
+  const Datadisplay = (e) => {
+    let data = localStorage.getItem("user");
+    let x = JSON.parse(data);
+
+    axios
+      .get("http://localhost:4000/accounts", {
+        headers: {
+          Authorization: "Bearer " + x?.jwtToken,
+        },
+      })
+      .then((y) => {
+        console.log(y.data);
+      })
+      .catch((y) => {
+        console.log(y);
+      });
+  };
   return (
     <div className="center">
       <Formik
@@ -17,6 +34,7 @@ const Login = () => {
             .post("http://localhost:4000/accounts/authenticate", e)
             .then((y) => {
               console.log(y);
+              localStorage.setItem("user", JSON.stringify(y.data));
               toast("login successfully");
             })
             .catch((y) => {
@@ -32,6 +50,7 @@ const Login = () => {
             value="submit"
             className="btn btn-danger form-control"
           />
+          <button onClick={Datadisplay}>Display</button>
         </Form>
       </Formik>
     </div>

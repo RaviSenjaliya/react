@@ -11,17 +11,28 @@ import "react-toastify/dist/ReactToastify.css";
 import MU1 from "./component/MU/MU1";
 import Memo from "./component/MU/memo";
 import UseMemoo from "./component/usememo/useMemoo";
+// ------------------------------------------------------------------
 import { Provider } from "react-redux";
 import CountingRX from "./CountingRX";
 import store from "./component/store/store";
+import Signup from "./component/post/signup";
+import SingIN from "./component/registrationToken/SingIN";
+import LogIN from "./component/registrationToken/LogIN";
+// -----------------------------------------------------------------
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ToastContainer />
-    <Provider store={store}>
+    <SingIN />
+    <br />
+    <LogIN />
+
+    {/* <Provider store={store}>
+      <Login />
+
       <CountingRX />
-    </Provider>
+    </Provider> */}
     {/* <UseMemoo text="people and adjust to changes with ease. I believe that a person should work on developing their professional skills and learning new things all the tim" /> */}
   </React.StrictMode>
 );
