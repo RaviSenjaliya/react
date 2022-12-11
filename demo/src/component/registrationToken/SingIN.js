@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import TextField from "@mui/material/TextField";
+import "../MU/mu.css";
 
 const SingIN = () => {
   const [Data, setData] = useState({
@@ -31,20 +33,60 @@ const SingIN = () => {
       });
   };
   return (
-    <div>
+    <div className="midd toop mt-5 p-4">
       <form onSubmit={mysubmit}>
-        <input type="text" onChange={myhandler} name="title" />
-        <br />
-        <input type="text" onChange={myhandler} name="firstName" />
-        <br />
-        <input type="text" onChange={myhandler} name="lastName" />
-        <br />
-        <input type="text" onChange={myhandler} name="email" />
-        <br />
-        <input type="text" onChange={myhandler} name="password" />
-        <br />
-        <input type="text" onChange={myhandler} name="confirmPassword" /> <br />
-        <input type="submit" value="Submit" />
+        <h1 className="text-center  bg-light  p-2 rounded-2  mb-4">
+          Registration
+        </h1>
+
+        <TextField
+          label="title"
+          name="title"
+          onChange={myhandler}
+          className="w-100 mt-3"
+          variant="outlined"
+        />
+        <TextField
+          label="firstName"
+          name="firstName"
+          onChange={myhandler}
+          className="w-100 mt-3"
+          variant="outlined"
+        />
+        <TextField
+          label="lastName"
+          name="lastName"
+          onChange={myhandler}
+          className="w-100 mt-3"
+          variant="outlined"
+        />
+        <TextField
+          label="email"
+          name="email"
+          onChange={myhandler}
+          className="w-100 mt-3"
+          variant="outlined"
+        />
+        <TextField
+          label="password"
+          name="password"
+          onChange={myhandler}
+          className="w-100 mt-3"
+          variant="outlined"
+        />
+        <TextField
+          label="confirmPassword"
+          name="confirmPassword"
+          onChange={myhandler}
+          className="w-100 mt-3"
+          variant="outlined"
+        />
+
+        <input
+          type="submit"
+          className="btn btn-danger mt-4  form-control"
+          value="Submit"
+        />
       </form>
     </div>
   );

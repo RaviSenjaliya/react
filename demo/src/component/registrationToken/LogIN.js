@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
+import TextField from "@mui/material/TextField";
+import "../MU/mu.css";
 import { ToastContainer, toast } from "react-toastify";
 import { AgGridReact } from "ag-grid-react"; // the AG Grid React Component
 import "ag-grid-community/styles/ag-grid.css"; // Core grid CSS, always needed
@@ -62,18 +64,43 @@ export default function LogIN() {
   };
   return (
     <div>
-      <form onSubmit={mysubmit}>
-        <input type="text" onChange={handler} name="email" />
-        <br />
-        <input type="text" onChange={handler} name="password" />
-        <br />
-        <input type="submit" value="save" />
-      </form>
-      <button onClick={click}>Get Data</button>
+      <div className="midd top mt-5 p-4">
+        <h1 className="text-center  bg-light  p-2 rounded-2  mb-4">Log-In</h1>
+        <form onSubmit={mysubmit}>
+          <TextField
+            label="ID"
+            name="email"
+            onChange={handler}
+            className="w-100"
+            variant="outlined"
+          />
+          <TextField
+            label="password"
+            name="password"
+            onChange={handler}
+            className="w-100 mt-4"
+            variant="outlined"
+          />
+          <input
+            type="submit"
+            className="btn btn-danger mt-4  form-control"
+            value="save"
+          />
+        </form>
+        <button
+          className="btn  btn-outline-dark  mt-2 form-control"
+          onClick={click}
+        >
+          Get Data
+        </button>
 
-      {/* --------------------------------------------------------------------------- */}
-
-      <div className="ag-theme-alpine" style={{ width: 900, height: 500 }}>
+        {/* --------------------------------------------------------------------------- */}
+      </div>
+      <br />
+      <div
+        className="ag-theme-alpine midd top mt-5 p-4 "
+        style={{ width: 1200, height: 500 }}
+      >
         <AgGridReact rowData={row} columnDefs={col} />
       </div>
     </div>
