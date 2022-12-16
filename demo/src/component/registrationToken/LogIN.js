@@ -7,6 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { AgGridReact } from "ag-grid-react"; // the AG Grid React Component
 import "ag-grid-community/styles/ag-grid.css"; // Core grid CSS, always needed
 import "ag-grid-community/styles/ag-theme-alpine.css"; // Optional theme CSS
+import authoFatch from "../Axios/custom";
 
 export default function LogIN() {
   const [row, setrow] = useState([]);
@@ -45,15 +46,8 @@ export default function LogIN() {
   };
 
   const click = () => {
-    let data = localStorage.getItem("alluser");
-    let x = JSON.parse(data);
-
-    axios
-      .get("http://localhost:4000/accounts", {
-        headers: {
-          Authorization: "Bearer " + x?.jwtToken,
-        },
-      })
+    authoFatch
+      .get("accounts")
       .then((e) => {
         console.log(e.data);
         setrow(e.data);
@@ -65,7 +59,9 @@ export default function LogIN() {
   return (
     <div>
       <div className="midd top mt-5 p-4">
-        <h1 className="text-center  bg-light  p-2 rounded-2  mb-4">Log-In</h1>
+        <h1 className="text-center bg-light  text-dark  p-2 rounded-2  mb-4">
+          Log-In
+        </h1>
         <form onSubmit={mysubmit}>
           <TextField
             label="ID"

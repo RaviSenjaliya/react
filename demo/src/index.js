@@ -19,21 +19,29 @@ import Signup from "./component/post/signup";
 import SingIN from "./component/registrationToken/SingIN";
 import LogIN from "./component/registrationToken/LogIN";
 // -----------------------------------------------------------------
+import Globle from "./component/Axios/Globle";
+import VideoPlayer from "./component/useRef/VideoPlayer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./component/Routers/Header";
+import Home from "./component/Routers/Home";
+import About from "./component/Routers/About";
+import Contact from "./component/Routers/Contact";
+import Footer from "./component/Routers/Footer";
+import Error from "./component/Routers/Error";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ToastContainer />
-    <SingIN />
-    <br />
-    <LogIN />
-
-    {/* <Provider store={store}>
-      <Login />
-
-      <CountingRX />
-    </Provider> */}
-    {/* <UseMemoo text="people and adjust to changes with ease. I believe that a person should work on developing their professional skills and learning new things all the tim" /> */}
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/About" element={<About />}></Route>
+        <Route path="/Contact" element={<Contact />}></Route>
+        <Route path="*" element={<Error />}></Route>
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
