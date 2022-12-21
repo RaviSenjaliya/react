@@ -6,7 +6,7 @@ export default function Navbar() {
     <div>
       <nav className="navbar container p-3 rounded-3 mt-3  navbar-expand-lg navbar-dark bg-dark">
         <a className="navbar-brand" href="#">
-          W3Schoole
+          <span className="bg-success p-1 text-white rounded-5">W</span>3Schoole
         </a>
 
         <button
