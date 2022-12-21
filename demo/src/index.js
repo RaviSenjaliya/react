@@ -28,16 +28,45 @@ import About from "./component/Routers/About";
 import Contact from "./component/Routers/Contact";
 import Footer from "./component/Routers/Footer";
 import Error from "./component/Routers/Error";
+import Users from "./component/Routers/Users";
+import SigUp from "./component/Routers/SigUp";
+import Loginn from "./component/Routers/Login";
+import HtML from "./component/Routers/W3/HTML";
+import CSs from "./component/Routers/W3/CSS";
+import Navbar from "./component/Routers/W3/Navbar";
+import Tutorial from "./component/Routers/W3/HTML/Tutorial";
+import Introduction from "./component/Routers/W3/HTML/Introduction";
+import Editors from "./component/Routers/W3/HTML/Editors";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    {/* <BrowserRouter>
       <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>
+
+        <Route path="/Users" element={<Users />}>
+          <Route path="Login" element={<Loginn />}></Route>
+          <Route path="SigUp" element={<SigUp />}></Route>
+        </Route>
+
         <Route path="/About" element={<About />}></Route>
         <Route path="/Contact" element={<Contact />}></Route>
+        <Route path="*" element={<Error />}></Route>
+      </Routes>
+      <Footer />
+    </BrowserRouter> */}
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/HTML" element={<HtML />}>
+          <Route path="Tutorial" element={<Tutorial />}></Route>
+          <Route path="Introduction" element={<Introduction />}></Route>
+          <Route path="Editors" element={<Editors />}></Route>
+        </Route>
+        <Route path="/CSS" element={<CSs />}></Route>
+
         <Route path="*" element={<Error />}></Route>
       </Routes>
       <Footer />

@@ -4,7 +4,7 @@ import { Outlet, Link } from "react-router-dom";
 export default function Header() {
   return (
     <div>
-      <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar  navbar-expand-lg navbar-dark bg-dark">
         <a className="navbar-brand" href="#">
           Navbar
         </a>
@@ -35,6 +35,11 @@ export default function Header() {
             <li className="nav-item active">
               <Link className="nav-link" to="/Contact">
                 Contact
+              </Link>
+            </li>
+            <li className="nav-item active">
+              <Link className="nav-link" to="/Users">
+                Users
               </Link>
             </li>
           </ul>
