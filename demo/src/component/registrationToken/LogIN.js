@@ -8,17 +8,19 @@ import { AgGridReact } from "ag-grid-react"; // the AG Grid React Component
 import "ag-grid-community/styles/ag-grid.css"; // Core grid CSS, always needed
 import "ag-grid-community/styles/ag-theme-alpine.css"; // Optional theme CSS
 import authoFatch from "../Axios/custom";
+import { useNavigate } from "react-router-dom";
 
 export default function LogIN() {
-  const [row, setrow] = useState([]);
-  const [col, setcol] = useState([
-    { field: "created", filter: "agNumberColumnFilter" },
-    { field: "id", filter: "agNumberColumnFilter" },
-    { field: "email", filter: true, sortable: true },
-    { field: "title", filter: true, sortable: true },
-    { field: "firstName", filter: true, sortable: true },
-    { field: "lastName", filter: true, sortable: true },
-  ]);
+  const show = useNavigate();
+  // const [row, setrow] = useState([]);
+  // const [col, setcol] = useState([
+  //   { field: "created", filter: "agNumberColumnFilter" },
+  //   { field: "id", filter: "agNumberColumnFilter" },
+  //   { field: "email", filter: true, sortable: true },
+  //   { field: "title", filter: true, sortable: true },
+  //   { field: "firstName", filter: true, sortable: true },
+  //   { field: "lastName", filter: true, sortable: true },
+  // ]);
 
   const [data, setData] = useState({
     email: "",
@@ -39,6 +41,7 @@ export default function LogIN() {
         console.log(r);
         localStorage.setItem("alluser", JSON.stringify(r.data));
         toast("login successfully");
+        show("/product");
       })
       .catch(() => {
         toast("404");
@@ -50,7 +53,7 @@ export default function LogIN() {
       .get("accounts")
       .then((e) => {
         console.log(e.data);
-        setrow(e.data);
+        // setrow(e.data);
       })
       .catch((e) => {
         console.log(e);
@@ -92,13 +95,13 @@ export default function LogIN() {
 
         {/* --------------------------------------------------------------------------- */}
       </div>
-      <br />
+      {/* <br />
       <div
         className="ag-theme-alpine midd top mt-5 p-4 "
         style={{ width: 1200, height: 500 }}
       >
         <AgGridReact rowData={row} columnDefs={col} />
-      </div>
+      </div> */}
     </div>
   );
 }

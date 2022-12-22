@@ -214,9 +214,9 @@ header {
   object-fit: cover;
   z-index: -2;
 }
-h1 {
+/* h1 {
   color: var(--clr-white);
-}
+} */
 /* / switch button / */
 
 .switch-btn {

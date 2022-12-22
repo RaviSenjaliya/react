@@ -2,8 +2,10 @@ import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const show = useNavigate();
   const Datadisplay = (e) => {
     let data = localStorage.getItem("user");
     let x = JSON.parse(data);
@@ -35,6 +37,7 @@ const Login = () => {
             .then((y) => {
               console.log(y);
               localStorage.setItem("user", JSON.stringify(y.data));
+              show("/product");
               toast("login successfully");
             })
             .catch((y) => {

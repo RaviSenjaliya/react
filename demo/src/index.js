@@ -37,6 +37,9 @@ import Navbar from "./component/Routers/W3/Navbar";
 import Tutorial from "./component/Routers/W3/HTML/Tutorial";
 import Introduction from "./component/Routers/W3/HTML/Introduction";
 import Editors from "./component/Routers/W3/HTML/Editors";
+import FNav from "./component/Routers/form/FNav";
+import RequireAuth from "./component/Routers/private/Autho";
+import Product from "./component/Routers/form/Product";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -58,6 +61,23 @@ root.render(
       <Footer />
     </BrowserRouter> */}
     <BrowserRouter>
+      <FNav />
+      <Routes>
+        <Route path="/" element={<LogIN />} />
+        <Route path="/Navsingup" element={<SingIN />} />
+        <Route
+          path="/product"
+          element={
+            <RequireAuth>
+              <Product />
+            </RequireAuth>
+          }
+        />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
+
+    {/* <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path="/HTML" element={<HtML />}>
@@ -70,7 +90,7 @@ root.render(
         <Route path="*" element={<Error />}></Route>
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </BrowserRouter> */}
   </React.StrictMode>
 );
 
