@@ -41,11 +41,29 @@ import FNav from "./component/Routers/form/FNav";
 import RequireAuth from "./component/Routers/private/Autho";
 import Product from "./component/Routers/form/Product";
 import FileUp from "./component/fileUpload/FileUp";
+import MyHoc from "./component/HOC/HocNav";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+let HOCAbout = MyHoc(About);
+let HOCHome = MyHoc(Home);
+let HOCContact = MyHoc(Contact);
+
 root.render(
   <React.StrictMode>
-    <FileUp />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HOCHome />}></Route>
+
+        <Route path="/Users" element={<Users />}>
+          <Route path="Login" element={<LogIN />}></Route>
+          <Route path="SigUp" element={<SingIN />}></Route>
+        </Route>
+
+        <Route path="/About" element={<HOCAbout />}></Route>
+        <Route path="/Contact" element={<HOCContact />}></Route>
+        <Route path="*" element={<Error />}></Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
