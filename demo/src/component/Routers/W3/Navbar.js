@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
-
+import CustComLink from "../CustomLink/CustomLink";
 export default function Navbar() {
   return (
     <div>
@@ -23,18 +23,18 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item active">
-              <Link class="nav-link " to="/HTML">
+              <CustComLink class="nav-link " to="/HTML">
                 HTML
-              </Link>
+              </CustComLink>
             </li>
             <li className="nav-item active">
-              <Link className="nav-link" to="/CSS">
+              <CustComLink className="nav-link" to="/CSS">
                 CSS
-              </Link>
+              </CustComLink>
             </li>
 
             <li class="nav-item dropdown">
-              <Link
+              <CustComLink
                 class="nav-link dropdown-toggle"
                 id="navbarDropdownMenuLink"
                 role="button"
@@ -43,25 +43,25 @@ export default function Navbar() {
                 to="/HTML"
               >
                 HTML
-              </Link>
+              </CustComLink>
               <ul
                 class="dropdown-menu"
                 aria-labelledby="navbarDropdownMenuLink"
               >
                 <li>
-                  <Link class="dropdown-item" to="Tutorial">
+                  <CustComLink class="dropdown-item" to="Tutorial">
                     Tutorial
-                  </Link>
+                  </CustComLink>
                 </li>
                 <li>
-                  <Link class="dropdown-item" to="Introduction">
+                  <CustComLink class="dropdown-item" to="Introduction">
                     Introduction
-                  </Link>
+                  </CustComLink>
                 </li>
                 <li>
-                  <Link class="dropdown-item" to="Editors">
+                  <CustComLink class="dropdown-item" to="Editors">
                     Editors
-                  </Link>
+                  </CustComLink>
                 </li>
               </ul>
             </li>

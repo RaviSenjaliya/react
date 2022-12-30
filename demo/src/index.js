@@ -42,29 +42,54 @@ import RequireAuth from "./component/Routers/private/Autho";
 import Product from "./component/Routers/form/Product";
 import FileUp from "./component/fileUpload/FileUp";
 import MyHoc from "./component/HOC/HocNav";
+import ErrorBoundry from "./component/ErrorHandle/ErrorBoundry";
+import Errorr from "./component/ErrorHandle/Errorr";
+import CustomeAPI from "./component/CustomHook/CustomeAPI";
+import { ErrorBoundary } from "react-error-boundary";
+import { Suspense, lazy } from "react";
+import { ErrorInstall } from "./component/ErrorHandle/ErrorInstall";
+import ThunkCounter from "./component/ReduxThunk/ThunkCounter";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-let HOCAbout = MyHoc(About);
-let HOCHome = MyHoc(Home);
-let HOCContact = MyHoc(Contact);
+// let HOCAbout = MyHoc(About);
+// let HOCHome = MyHoc(Home);
+// let HOCContact = MyHoc(Contact);
+
+// const LzCSS = React.lazy(() => import("./component/Routers/W3/CSS"));
+// const LzHTML = React.lazy(() => import("./component/Routers/W3/HTML"));
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HOCHome />}></Route>
-
-        <Route path="/Users" element={<Users />}>
-          <Route path="Login" element={<LogIN />}></Route>
-          <Route path="SigUp" element={<SingIN />}></Route>
-        </Route>
-
-        <Route path="/About" element={<HOCAbout />}></Route>
-        <Route path="/Contact" element={<HOCContact />}></Route>
-        <Route path="*" element={<Error />}></Route>
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <ThunkCounter />
+    </Provider>
   </React.StrictMode>
 );
 
 reportWebVitals();
+
+{
+  /* <BrowserRouter>
+      <Navbar />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/HTML" element={<LzHTML />}>
+            <Route path="Tutorial" element={<Tutorial />}></Route>
+            <Route path="Introduction" element={<Introduction />}></Route>
+            <Route path="Editors" element={<Editors />}></Route>
+          </Route>
+          <Route path="/CSS" element={<LzCSS />}></Route>
+
+          <Route path="*" element={<Error />}></Route>
+        </Routes>
+      </Suspense>
+      <Footer />
+    </BrowserRouter> */
+}
+
+{
+  /* <ErrorBoundary FallbackComponent={ErrorInstall}>
+      <Errorr />
+      <CustomeAPI />
+    </ErrorBoundary> */
+}
