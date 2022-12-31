@@ -14,7 +14,6 @@ import UseMemoo from "./component/usememo/useMemoo";
 // ------------------------------------------------------------------
 import { Provider } from "react-redux";
 import CountingRX from "./CountingRX";
-import store from "./component/store/store";
 import Signup from "./component/post/signup";
 import SingIN from "./component/registrationToken/SingIN";
 import LogIN from "./component/registrationToken/LogIN";
@@ -49,6 +48,9 @@ import { ErrorBoundary } from "react-error-boundary";
 import { Suspense, lazy } from "react";
 import { ErrorInstall } from "./component/ErrorHandle/ErrorInstall";
 import ThunkCounter from "./component/ReduxThunk/ThunkCounter";
+import store from "./component/ReduxThunk/Store/StoreT";
+import ApiDisp from "./component/ReduxThunk/ApiDisp";
+import CounterSaga from "./component/ReduxThunk/counterSaga";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // let HOCAbout = MyHoc(About);
@@ -61,7 +63,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ThunkCounter />
+      {/* <ThunkCounter />
+      <ApiDisp /> */}
+      <CounterSaga />
     </Provider>
   </React.StrictMode>
 );

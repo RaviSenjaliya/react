@@ -3,9 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { plus, Minus, AsncMinus } from "./Action/ActionT";
 
 export default function ThunkCounter() {
-  const collect = useSelector((y) => y);
+  const collect = useSelector((y) => y.counter);
 
-  console.log(collect);
   const show = useDispatch();
 
   const Increment = () => {
