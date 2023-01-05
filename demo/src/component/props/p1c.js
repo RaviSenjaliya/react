@@ -15,6 +15,7 @@ export default function P1c(props) {
             Go somewhere
           </a>
         </div>
+        
       </div>
     </div>
   );

@@ -51,6 +51,10 @@ import ThunkCounter from "./component/ReduxThunk/ThunkCounter";
 import store from "./component/ReduxThunk/Store/StoreT";
 import ApiDisp from "./component/ReduxThunk/ApiDisp";
 import CounterSaga from "./component/ReduxThunk/counterSaga";
+import ApiDispp from "./component/ReduxThunk/FetchData";
+import FunR1 from "./component/ReduxThunk/FunR1";
+import FunR2 from "./component/ReduxThunk/FunR2";
+import FunR3 from "./component/ReduxThunk/FunR3";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // let HOCAbout = MyHoc(About);
@@ -65,7 +69,11 @@ root.render(
     <Provider store={store}>
       {/* <ThunkCounter />
       <ApiDisp /> */}
-      <CounterSaga />
+      {/* <CounterSaga /> */}
+      {/* <ApiDispp /> */}
+      {/* <FunR1 /> */}
+      <FunR2 />
+      {/* <FunR3 /> */}
     </Provider>
   </React.StrictMode>
 );
