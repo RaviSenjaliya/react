@@ -48,13 +48,15 @@ import { ErrorBoundary } from "react-error-boundary";
 import { Suspense, lazy } from "react";
 import { ErrorInstall } from "./component/ErrorHandle/ErrorInstall";
 import ThunkCounter from "./component/ReduxThunk/ThunkCounter";
-import store from "./component/ReduxThunk/Store/StoreT";
+// import store from "./component/ReduxThunk/Store/StoreT";
+import { store } from "./component/ReduxThunk/Tollkit/TollStore";
 import ApiDisp from "./component/ReduxThunk/ApiDisp";
 import CounterSaga from "./component/ReduxThunk/counterSaga";
 import ApiDispp from "./component/ReduxThunk/FetchData";
 import FunR1 from "./component/ReduxThunk/FunR1";
 import FunR2 from "./component/ReduxThunk/FunR2";
 import FunR3 from "./component/ReduxThunk/FunR3";
+import TolkitCounter from "./component/ReduxThunk/Tollkit/TolkitCounter";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // let HOCAbout = MyHoc(About);
@@ -67,13 +69,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      {/* <ThunkCounter />
-      <ApiDisp /> */}
-      {/* <CounterSaga /> */}
-      {/* <ApiDispp /> */}
-      {/* <FunR1 /> */}
-      <FunR2 />
-      {/* <FunR3 /> */}
+      <TolkitCounter />
     </Provider>
   </React.StrictMode>
 );
