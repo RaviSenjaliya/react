@@ -57,6 +57,7 @@ import FunR1 from "./component/ReduxThunk/FunR1";
 import FunR2 from "./component/ReduxThunk/FunR2";
 import FunR3 from "./component/ReduxThunk/FunR3";
 import TolkitCounter from "./component/ReduxThunk/Tollkit/TolkitCounter";
+import PostShow from "./component/ReduxThunk/Tollkit/dataAPI/PostShow";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // let HOCAbout = MyHoc(About);
@@ -69,7 +70,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <TolkitCounter />
+      <PostShow />
     </Provider>
   </React.StrictMode>
 );
