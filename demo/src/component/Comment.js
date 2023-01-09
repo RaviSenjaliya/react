@@ -16,25 +16,22 @@
       <Footer />
     </BrowserRouter> */
 }
-{
-  /* <BrowserRouter>
-      <FNav />
-      <Routes>
-        <Route path="/" element={<LogIN />} />
-        <Route path="/Navsingup" element={<SingIN />} />
-        <Route
-          path="/product"
-          element={
-            <RequireAuth>
-              <Product />
-            </RequireAuth>
-          }
-        />
-      </Routes>
-      <Footer />
-    </BrowserRouter> */
-}
-
+<BrowserRouter>
+  <FNav />
+  <Routes>
+    <Route path="/" element={<LogIN />} />
+    <Route path="/Navsingup" element={<SingIN />} />
+    <Route
+      path="/product"
+      element={
+        <RequireAuth>
+          <Product />
+        </RequireAuth>
+      }
+    />
+  </Routes>
+  <Footer />
+</BrowserRouter>;
 {
   /* <BrowserRouter>
       <Navbar />

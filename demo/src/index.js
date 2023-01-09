@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import Login from "./component/post/login";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MU1 from "./component/MU/MU1";
@@ -14,7 +14,10 @@ import UseMemoo from "./component/usememo/useMemoo";
 // ------------------------------------------------------------------
 import { Provider } from "react-redux";
 import CountingRX from "./CountingRX";
+
 import Signup from "./component/post/signup";
+import Login from "./component/post/login";
+
 import SingIN from "./component/registrationToken/SingIN";
 import LogIN from "./component/registrationToken/LogIN";
 // -----------------------------------------------------------------
@@ -58,6 +61,16 @@ import FunR2 from "./component/ReduxThunk/FunR2";
 import FunR3 from "./component/ReduxThunk/FunR3";
 import TolkitCounter from "./component/ReduxThunk/Tollkit/TolkitCounter";
 import PostShow from "./component/ReduxThunk/Tollkit/dataAPI/PostShow";
+import Form2 from "./component/Form/Formm";
+import Praccc from "./component/Form/Praccc";
+import Fooor from "./component/post/fooor";
+import Taskform from "./component/props/Taskform";
+import Api2 from "./component/API/Api2";
+import Api4 from "./component/API/Api4";
+import API22 from "./component/API/Filtter";
+import Boot from "./component/reactBootstrap/boot";
+import LLog from "./component/hello/LLog";
+import FFormik from "./component/Form/Formik";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // let HOCAbout = MyHoc(About);
@@ -72,6 +85,16 @@ root.render(
     <Provider store={store}>
       <PostShow />
     </Provider>
+    {/* <Form2 /> */}
+    {/* <Praccc /> */}
+    {/* <Boot /> */}
+    {/* <API22 /> */}
+    {/* <Fooor /> */}
+    {/* <Taskform /> */}
+    {/* <Login /> */}
+    {/* <FFormik /> */}
+    {/* <Signup /> */}
+    {/* <LLog /> */}
   </React.StrictMode>
 );
 

@@ -3,9 +3,23 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { AgGridReact } from "ag-grid-react"; // the AG Grid React Component
+import "ag-grid-community/styles/ag-grid.css"; // Core grid CSS, always needed
+import "ag-grid-community/styles/ag-theme-alpine.css"; // Optional theme CSS
+import { useState } from "react";
 
 const Login = () => {
-  const show = useNavigate();
+  // const show = useNavigate();
+  const [row, setrow] = useState([]);
+  const [col, setcol] = useState([
+    { field: "created", filter: "agNumberColumnFilter" },
+    { field: "id", filter: "agNumberColumnFilter" },
+    { field: "email", filter: true, sortable: true },
+    { field: "title", filter: true, sortable: true },
+    { field: "firstName", filter: true, sortable: true },
+    { field: "lastName", filter: true, sortable: true },
+  ]);
+
   const Datadisplay = (e) => {
     let data = localStorage.getItem("user");
     let x = JSON.parse(data);
@@ -18,6 +32,7 @@ const Login = () => {
       })
       .then((y) => {
         console.log(y.data);
+        setrow(y.data);
       })
       .catch((y) => {
         console.log(y);
@@ -37,7 +52,7 @@ const Login = () => {
             .then((y) => {
               console.log(y);
               localStorage.setItem("user", JSON.stringify(y.data));
-              show("/product");
+              // show("/product");
               toast("login successfully");
             })
             .catch((y) => {
@@ -56,6 +71,12 @@ const Login = () => {
           <button onClick={Datadisplay}>Display</button>
         </Form>
       </Formik>
+      <div
+        className="ag-theme-alpine midd top mt-5 p-4 "
+        style={{ width: 500, height: 500 }}
+      >
+        <AgGridReact rowData={row} columnDefs={col} />
+      </div>
     </div>
   );
 };

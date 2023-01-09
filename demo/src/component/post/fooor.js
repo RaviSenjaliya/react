@@ -49,13 +49,13 @@ export default function Fooor() {
     val.push(input);
     setdata(val);
 
-    axios
-      .post("https://jsonplaceholder.typicode.com/users", input)
-      .then((e) => {
-        console.log(e);
-        setinput(e);
-        toast("done...😄");
-      });
+    // axios
+    //   .post("https://jsonplaceholder.typicode.com/users", input)
+    //   .then((e) => {
+    //     console.log(e);
+    //     setinput(e);
+    //     toast("done...😄");
+    //   });
   };
   return (
     <div>

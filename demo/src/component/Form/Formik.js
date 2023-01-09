@@ -1,6 +1,6 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
-import "../Formm.css";
+import "./Formm.css";
 import * as yup from "yup";
 
 let val = yup.object().shape({

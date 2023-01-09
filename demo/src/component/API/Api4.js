@@ -6,16 +6,16 @@ export default function Api4() {
   const [state, setstate] = useState([]);
   useEffect(() => {
     axios
-      .get("https://datausa.io/api/data?drilldowns=Nation&measures=Population")
-      .then((e) => setstate(e.data.data));
+      .get("https://jsonplaceholder.typicode.com/posts")
+      .then((e) => setstate(e.data));
   }, []);
   return (
     <div>
       {state.map((e) => {
         return (
           <div>
-            <li>{e.Nation}</li>
-            <li>{e.Year}</li>
+            <li>{e.userId}</li>
+            <li>{e.title}</li>
             <hr />
           </div>
         );

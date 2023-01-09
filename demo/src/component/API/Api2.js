@@ -1,23 +1,21 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import axios from "axios";
+import { useState, useEffect } from "react";
 
 export default function Api2() {
   const [state, setstate] = useState([]);
   useEffect(() => {
     axios
-      .get("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita")
-      .then((e) => setstate(e.data.drinks));
+      .get("https://datausa.io/api/data?drilldowns=Nation&measures=Population")
+      .then((x) => setstate(x.data.data));
   }, []);
   return (
     <div>
       {state.map((e) => {
         return (
-          <>
-            <li>{e.idDrink}</li>
-            <li>{e.strDrink}</li>
-            <hr />
-          </>
+          <div>
+            <h1>{e.Nation}</h1>;
+          </div>
         );
       })}
     </div>

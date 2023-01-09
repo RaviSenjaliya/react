@@ -5,8 +5,8 @@ import "./taskform.css";
 
 const Taskform = () => {
   const [search, setsearch] = useState("");
-  const [Data, setData] = useState([]);
   const [Add, setAdd] = useState(-1);
+  const [Data, setData] = useState([]);
   const [input, setinput] = useState({
     Fname: "",
     Lname: "",
@@ -28,7 +28,7 @@ const Taskform = () => {
   const Shandler = (e) => {
     setsearch(e.target.value);
   };
-  // ---------------------------------------------------------------
+  // --------------------(adit)-------------------------------------------
   const add = (index) => {
     let add = Data[index];
     setinput(add);

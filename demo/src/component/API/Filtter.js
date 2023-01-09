@@ -1,15 +1,13 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
-const API2 = () => {
+const API22 = () => {
   const [data, setdata] = useState([]);
   const [findd, setfindd] = useState("");
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
-      .then((e) => e.json())
-      .then((e) => {
-        setdata(e);
-      });
+      .then((x) => x.json())
+      .then((x) => setdata(x));
   }, []);
   //   ======================================
   const myfun = (h) => {
@@ -40,8 +38,8 @@ const API2 = () => {
         <tbody>
           {/* ------------------------------------------------------------------------------- */}
           {data
-            .filter((v) => {
-              return v.name.toUpperCase().indexOf(findd.toUpperCase()) >= 0;
+            .filter((e) => {
+              return e.name.toUpperCase().indexOf(findd.toUpperCase()) >= 0;
             })
             .map((v) => {
               return (
@@ -62,4 +60,4 @@ const API2 = () => {
   );
 };
 
-export default API2;
+export default API22;
