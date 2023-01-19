@@ -71,6 +71,12 @@ import API22 from "./component/API/Filtter";
 import Boot from "./component/reactBootstrap/boot";
 import LLog from "./component/hello/LLog";
 import FFormik from "./component/Form/Formik";
+import ProductShow from "./component/ReduxThunk/Tollkit/dataAPI/API2/ProductShow";
+import Class1 from "./component/ClassComp/ClassCom1/Class1";
+import ClassTask from "./component/ClassComp/t2/ClassTask";
+import C1 from "./component/props/C1";
+import FormL3 from "./component/Form/L3/FormL3";
+import FullUserForm from "./component/Form/FullUserForm/FullUserForm";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // let HOCAbout = MyHoc(About);
@@ -82,9 +88,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <PostShow />
-    </Provider>
+    {/* <Provider store={store}>
+      <ProductShow />
+    </Provider> */}
     {/* <Form2 /> */}
     {/* <Praccc /> */}
     {/* <Boot /> */}
@@ -95,6 +101,10 @@ root.render(
     {/* <FFormik /> */}
     {/* <Signup /> */}
     {/* <LLog /> */}
+    {/* <Class1 /> */}
+    {/* <ClassTask /> */}
+    {/* <FormL3 /> */}
+    <FullUserForm />
   </React.StrictMode>
 );
 

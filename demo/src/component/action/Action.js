@@ -1,5 +1,6 @@
-export const Decriment = () => ({
+export const Decriment = (num) => ({
   type: "Decriment",
+  payload: num,
 });
 export const Increment = () => ({
   type: "Increment",
