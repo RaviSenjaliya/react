@@ -13,15 +13,27 @@ export default function API1() {
 
   return (
     <div>
-      {state.map((val) => {
-        return (
-          <ul>
-            <li>{val.symbol}</li>
-            <li>{val.priceChange}</li>
-            <li>{val.priceChangePercent}</li>
-          </ul>
-        );
-      })}
+      <table>
+        <thead>
+          <tr>
+            <td>id</td>
+            <td>title</td>
+            <td>completed</td>
+            <td>delet</td>
+          </tr>
+        </thead>
+        <tbody>
+          {state.map((val) => {
+            return (
+              <tr>
+                <td>{val.symbol}</td>
+                <td>{val.priceChange}</td>
+                <td>{val.completed}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 }

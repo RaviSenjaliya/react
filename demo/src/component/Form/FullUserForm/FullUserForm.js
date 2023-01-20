@@ -80,6 +80,7 @@ export default function FullUserForm() {
       },
     ]);
   };
+
   const handleeInputChange = (e, index) => {
     if (e.target.type == "checkbox") {
       if (e.target.checked == true) {
@@ -232,7 +233,7 @@ export default function FullUserForm() {
                   />
                 </div>
               </div>
-              <div className="btn-box">
+              <div className="btn-box mb-3">
                 {Edu.length !== 1 && (
                   <button
                     className="mr10 btn btn-danger"
@@ -252,7 +253,7 @@ export default function FullUserForm() {
         })}
         <hr />
         <div>
-          <h3 className="bg-black text-white p-3 rounded-3">Experience</h3>
+          <h3 className="bg-black text-white p-3 rounded-3 ">Experience</h3>
         </div>
         <hr />
         {EXp.map((x, i) => {
@@ -313,7 +314,7 @@ export default function FullUserForm() {
                 currently working.....
               </div>
 
-              <div className="btn-box">
+              <div className="btn-box mb-3">
                 {EXp.length !== 1 && (
                   <button
                     className="mr10 btn btn-danger"
@@ -331,13 +332,11 @@ export default function FullUserForm() {
             </div>
           );
         })}
-        <div className="text-center">
-          <input type="submit" value="save" className="btn" />
-          <button onClick={handleReset} className="btn ">
-            Reset
-          </button>
-        </div>
+        <input type="submit" value="save" className="" />
       </form>
+      <button onClick={handleReset} className="btn ">
+        Reset
+      </button>
     </div>
   );
 }

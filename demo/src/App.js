@@ -10,16 +10,16 @@ import Lanselector from "./component/useContext/Lanselector";
 import Ch1 from "./component/useContext/Ch1";
 
 export default function App() {
-  const [lan, setlan] = useState("en");
+  // const [lan, setlan] = useState("en");
   return (
     <div className="text-center">
-      <h3>userForm</h3>
+      <h3>Ravi senjaliya</h3>
 
-      <changelang.Provider value={{ lan, setlan }}>
+      {/* <changelang.Provider value={{ lan, setlan }}>
         <Lanselector />
         <br />
         <Ch1 />
-      </changelang.Provider>
+      </changelang.Provider> */}
     </div>
   );
 }
